@@ -1,0 +1,50 @@
+name: ⚽ 每日足球推送
+
+on:
+  schedule:
+    # 每天北京时间 08:00 = UTC 00:00
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    # 支持手动触发
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run scraper
+        run: python fetch_football.py
+
+      - name: Read report
+        id: report
+        run: echo "content=$(cat football_daily.md)" >> $GITHUB_OUTPUT
+
+      - name: Send to WeChat via PushPlus
+        if: env.PUSHPLUS_TOKEN != ''
+        run: |
+          curl -X POST "http://www.pushplus.plus/send" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "token": "${{ secrets.PUSHPLUS_TOKEN }}",
+              "title": "⚽ 足球日报 ${{ env.DATE }}",
+              "content": "${{ steps.report.outputs.content }}",
+              "template": "markdown"
+            }'
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add football_daily.md football_data.json
+          git diff --cached --quiet || git commit -m "📅 自动更新 $(date +%Y%m%d) 足球日报"
+          git push
