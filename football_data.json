@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-18",
+  "generated_at": "2026-11-18T17:16:01.477945+08:00",
+  "timezone": "Asia/Shanghai (UTC+8)",
+  "source": "ESPN Scoreboard API",
+  "errors": [],
+  "leagues": [
+    {
+      "id": "eng.1",
+      "name": "英超",
+      "name_en": "Premier League",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "matches": []
+    },
+    {
+      "id": "esp.1",
+      "name": "西甲",
+      "name_en": "La Liga",
+      "flag": "🇪🇸",
+      "matches": []
+    },
+    {
+      "id": "ger.1",
+      "name": "德甲",
+      "name_en": "Bundesliga",
+      "flag": "🇩🇪",
+      "matches": []
+    },
+    {
+      "id": "ita.1",
+      "name": "意甲",
+      "name_en": "Serie A",
+      "flag": "🇮🇹",
+      "matches": []
+    },
+    {
+      "id": "fra.1",
+      "name": "法甲",
+      "name_en": "Ligue 1",
+      "flag": "🇫🇷",
+      "matches": []
+    },
+    {
+      "id": "uefa.champions",
+      "name": "欧冠",
+      "name_en": "UEFA Champions League",
+      "flag": "🏆",
+      "matches": []
+    }
+  ]
+}
