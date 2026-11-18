@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# 本地调试产物（由 fetch_football.py 生成，CI 中会提交归档）
+# football_daily.md
+# football_data.json
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+
+# 日志
+*.log
