@@ -120,6 +120,9 @@ python notify_pushplus.py
 5. 保存后手动触发一次工作流验证
 
 > 💡 私钥类信息只保存在 Actions Secrets 中，仓库代码与提交历史中均不含真实 Token。
+>
+> ⚠️ **未配置时的表现**：工作流会打印「未配置 PUSHPLUS_TOKEN，跳过微信推送」并正常结束，
+> 日报仍会生成并归档到仓库 —— 不会导致整个任务失败。
 
 ---
 
@@ -146,6 +149,26 @@ Checkout (完整历史)
 - `permissions: contents: write` —— 允许工作流写回日报文件
 - `fetch-depth: 0` —— 保留完整历史，保证 `git pull --rebase` 正常
 - `concurrency` —— 避免定时任务与手动触发并发写入冲突
+
+> 💡 日报正文通过独立的 `notify_pushplus.py` 直接读取文件并构造 JSON 请求，
+> 不再经由 `$GITHUB_OUTPUT` 传递 —— 多行内容写进 `GITHUB_OUTPUT` 会导致
+> `Invalid format` 错误使整个工作流失败（这正是旧版本连续失败的原因）。
+
+### 手动回溯历史日期
+
+在 Actions 页面触发工作流时，可填入 `date` 参数抓取任意一天：
+
+```yaml
+workflow_dispatch:
+  inputs:
+    date:
+      description: "抓取指定日期（YYYY-MM-DD，北京时间），留空则使用当天"
+```
+
+```bash
+# 等价于本地执行
+python fetch_football.py --date 2025-11-01
+```
 
 ---
 
@@ -240,6 +263,22 @@ ESPN 队名带变音符与前后缀差异（如 `Atlético Madrid` vs `Atletico 
 修改 [`.github/workflows/daily_push.yml`](.github/workflows/daily_push.yml) 中的 `cron`。
 注意 cron 使用 **UTC** 时间，北京时间 = UTC + 8。
 例如北京时间 07:00 → `cron: "0 23 * * *"`。
+
+**Q：怎么把仓库改成 Public？**
+
+仓库 **Settings → 底部 Danger Zone → Change repository visibility → Make public**，
+按提示输入仓库名确认即可。
+
+> ⚠️ 自动化工具使用的 GitHub App 令牌仅有 `administration: read` 权限，
+> 无法代为修改仓库可见性，这一步需要你本人操作。
+
+**Q：想让仓库更容易被搜到吗？**
+
+在 **Settings → Topics** 添加：
+
+```
+football, soccer, espn, github-actions, python, automation, pushplus, daily-report
+```
 
 ---
 
