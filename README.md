@@ -153,7 +153,7 @@ python notify_pushplus.py
 
 ---
 
-## ⚙️ 配置项
+## 🔧 配置项
 
 ### 环境变量 / Secret
 
