@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-23",
-  "generated_at": "2026-11-23T12:37:22.045159+08:00",
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T15:29:45.426081+08:00",
   "timezone": "Asia/Shanghai (UTC+8)",
   "source": "ESPN Scoreboard API",
   "errors": [],
@@ -11,34 +11,6 @@
       "name_en": "Premier League",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "matches": [
-        {
-          "home": "Newcastle United",
-          "away": "Arsenal",
-          "kickoff_utc": "2026-11-21T17:30:00+00:00",
-          "kickoff_bjt": "2026-11-22T01:30:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "2",
-          "away_score": "2",
-          "winner": "",
-          "starred": [
-            "阿森纳"
-          ]
-        },
-        {
-          "home": "Hull City",
-          "away": "Brighton & Hove Albion",
-          "kickoff_utc": "2026-11-22T14:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T22:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "2",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
         {
           "home": "Liverpool",
           "away": "Manchester United",
@@ -54,6 +26,19 @@
             "利物浦",
             "曼联"
           ]
+        },
+        {
+          "home": "Brentford",
+          "away": "Everton",
+          "kickoff_utc": "2026-11-23T20:00:00+00:00",
+          "kickoff_bjt": "2026-11-24T04:00:00+08:00",
+          "status": "STATUS_FULL_TIME",
+          "status_text": "完场",
+          "completed": true,
+          "home_score": "4",
+          "away_score": "0",
+          "winner": "home",
+          "starred": []
         }
       ]
     },
@@ -63,62 +48,6 @@
       "name_en": "La Liga",
       "flag": "🇪🇸",
       "matches": [
-        {
-          "home": "Sevilla",
-          "away": "Real Betis",
-          "kickoff_utc": "2026-11-21T17:30:00+00:00",
-          "kickoff_bjt": "2026-11-22T01:30:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "1",
-          "winner": "",
-          "starred": []
-        },
-        {
-          "home": "Real Madrid",
-          "away": "Celta Vigo",
-          "kickoff_utc": "2026-11-21T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "2",
-          "away_score": "1",
-          "winner": "home",
-          "starred": [
-            "皇马"
-          ]
-        },
-        {
-          "home": "Barcelona",
-          "away": "Villarreal",
-          "kickoff_utc": "2026-11-22T13:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T21:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "3",
-          "away_score": "2",
-          "winner": "home",
-          "starred": [
-            "巴萨"
-          ]
-        },
-        {
-          "home": "Racing Santander",
-          "away": "Real Sociedad",
-          "kickoff_utc": "2026-11-22T15:15:00+00:00",
-          "kickoff_bjt": "2026-11-22T23:15:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "3",
-          "away_score": "2",
-          "winner": "home",
-          "starred": []
-        },
         {
           "home": "Osasuna",
           "away": "Málaga",
@@ -146,6 +75,19 @@
           "starred": [
             "马竞"
           ]
+        },
+        {
+          "home": "Levante",
+          "away": "Elche",
+          "kickoff_utc": "2026-11-23T20:00:00+00:00",
+          "kickoff_bjt": "2026-11-24T04:00:00+08:00",
+          "status": "STATUS_FULL_TIME",
+          "status_text": "完场",
+          "completed": true,
+          "home_score": "1",
+          "away_score": "1",
+          "winner": "",
+          "starred": []
         }
       ]
     },
@@ -155,32 +97,6 @@
       "name_en": "Bundesliga",
       "flag": "🇩🇪",
       "matches": [
-        {
-          "home": "Schalke 04",
-          "away": "VfB Stuttgart",
-          "kickoff_utc": "2026-11-21T17:30:00+00:00",
-          "kickoff_bjt": "2026-11-22T01:30:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "0",
-          "winner": "",
-          "starred": []
-        },
-        {
-          "home": "FC Augsburg",
-          "away": "Mainz",
-          "kickoff_utc": "2026-11-22T14:30:00+00:00",
-          "kickoff_bjt": "2026-11-22T22:30:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "3",
-          "away_score": "1",
-          "winner": "home",
-          "starred": []
-        },
         {
           "home": "Werder Bremen",
           "away": "Hamburg SV",
@@ -202,73 +118,6 @@
       "name_en": "Serie A",
       "flag": "🇮🇹",
       "matches": [
-        {
-          "home": "Parma",
-          "away": "AS Roma",
-          "kickoff_utc": "2026-11-21T17:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T01:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "5",
-          "winner": "away",
-          "starred": []
-        },
-        {
-          "home": "Napoli",
-          "away": "Torino",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "kickoff_bjt": "2026-11-22T03:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
-        {
-          "home": "Juventus",
-          "away": "Venezia",
-          "kickoff_utc": "2026-11-22T11:30:00+00:00",
-          "kickoff_bjt": "2026-11-22T19:30:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "4",
-          "away_score": "0",
-          "winner": "home",
-          "starred": [
-            "尤文"
-          ]
-        },
-        {
-          "home": "Bologna",
-          "away": "Udinese",
-          "kickoff_utc": "2026-11-22T14:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T22:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "1",
-          "winner": "",
-          "starred": []
-        },
-        {
-          "home": "Sassuolo",
-          "away": "Genoa",
-          "kickoff_utc": "2026-11-22T14:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T22:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "2",
-          "winner": "away",
-          "starred": []
-        },
         {
           "home": "AC Milan",
           "away": "Frosinone",
@@ -298,6 +147,19 @@
           "starred": [
             "国米"
           ]
+        },
+        {
+          "home": "Monza",
+          "away": "Fiorentina",
+          "kickoff_utc": "2026-11-23T19:45:00+00:00",
+          "kickoff_bjt": "2026-11-24T03:45:00+08:00",
+          "status": "STATUS_FULL_TIME",
+          "status_text": "完场",
+          "completed": true,
+          "home_score": "3",
+          "away_score": "0",
+          "winner": "home",
+          "starred": []
         }
       ]
     },
@@ -307,84 +169,6 @@
       "name_en": "Ligue 1",
       "flag": "🇫🇷",
       "matches": [
-        {
-          "home": "Nice",
-          "away": "Paris Saint-Germain",
-          "kickoff_utc": "2026-11-21T16:15:00+00:00",
-          "kickoff_bjt": "2026-11-22T00:15:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "2",
-          "away_score": "3",
-          "winner": "away",
-          "starred": []
-        },
-        {
-          "home": "AS Monaco",
-          "away": "AJ Auxerre",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "kickoff_bjt": "2026-11-22T03:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "1",
-          "winner": "",
-          "starred": []
-        },
-        {
-          "home": "Lens",
-          "away": "Toulouse",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "kickoff_bjt": "2026-11-22T03:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "1",
-          "winner": "",
-          "starred": []
-        },
-        {
-          "home": "Lille",
-          "away": "Lyon",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "kickoff_bjt": "2026-11-22T03:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "1",
-          "winner": "away",
-          "starred": []
-        },
-        {
-          "home": "Strasbourg",
-          "away": "Brest",
-          "kickoff_utc": "2026-11-21T19:45:00+00:00",
-          "kickoff_bjt": "2026-11-22T03:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "1",
-          "winner": "away",
-          "starred": []
-        },
-        {
-          "home": "Paris FC",
-          "away": "Angers",
-          "kickoff_utc": "2026-11-22T14:00:00+00:00",
-          "kickoff_bjt": "2026-11-22T22:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "4",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
         {
           "home": "Lorient",
           "away": "Stade Rennais",
