@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-26",
-  "generated_at": "2026-11-26T13:51:47.968573+08:00",
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T13:44:54.590396+08:00",
   "timezone": "Asia/Shanghai (UTC+8)",
   "source": "ESPN Scoreboard API",
   "errors": [],
@@ -46,130 +46,6 @@
       "name_en": "UEFA Champions League",
       "flag": "🏆",
       "matches": [
-        {
-          "home": "Bodo/Glimt",
-          "away": "LASK Linz",
-          "kickoff_utc": "2026-11-24T17:45:00+00:00",
-          "kickoff_bjt": "2026-11-25T01:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
-        {
-          "home": "Galatasaray",
-          "away": "Aston Villa",
-          "kickoff_utc": "2026-11-24T17:45:00+00:00",
-          "kickoff_bjt": "2026-11-25T01:45:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
-        {
-          "home": "Arsenal",
-          "away": "Borussia Dortmund",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "1",
-          "winner": "",
-          "starred": [
-            "阿森纳",
-            "多特"
-          ]
-        },
-        {
-          "home": "Como",
-          "away": "AEK Athens",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "1",
-          "away_score": "0",
-          "winner": "home",
-          "starred": []
-        },
-        {
-          "home": "Feyenoord Rotterdam",
-          "away": "FC Porto",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "1",
-          "winner": "away",
-          "starred": []
-        },
-        {
-          "home": "Manchester City",
-          "away": "Napoli",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "2",
-          "away_score": "2",
-          "winner": "",
-          "starred": [
-            "曼城"
-          ]
-        },
-        {
-          "home": "RB Leipzig",
-          "away": "Lens",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "3",
-          "away_score": "1",
-          "winner": "home",
-          "starred": []
-        },
-        {
-          "home": "Real Madrid",
-          "away": "PSV Eindhoven",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "5",
-          "away_score": "1",
-          "winner": "home",
-          "starred": [
-            "皇马"
-          ]
-        },
-        {
-          "home": "Slovan Bratislava",
-          "away": "Real Betis",
-          "kickoff_utc": "2026-11-24T20:00:00+00:00",
-          "kickoff_bjt": "2026-11-25T04:00:00+08:00",
-          "status": "STATUS_FULL_TIME",
-          "status_text": "完场",
-          "completed": true,
-          "home_score": "0",
-          "away_score": "2",
-          "winner": "away",
-          "starred": []
-        },
         {
           "home": "Sabah FK",
           "away": "Barcelona",
