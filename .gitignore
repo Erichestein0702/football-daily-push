@@ -10,6 +10,9 @@ venv/
 # football_daily.md
 # football_data.json
 
+# 推送审计存档（不含 token，CI 作为 artifact 上传）
+push_payload.json
+
 # 编辑器
 .vscode/
 .idea/

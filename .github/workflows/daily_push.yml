@@ -56,15 +56,38 @@ jobs:
           fi
 
       - name: Push to WeChat via PushPlus
+        id: push
         # secrets 上下文在 if 中不可直接引用，这里通过 env 判断
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: |
           if [ -z "$PUSHPLUS_TOKEN" ]; then
-            echo "未配置 PUSHPLUS_TOKEN，跳过微信推送"
-            exit 0
+            echo "::warning title=PUSHPLUS_TOKEN missing::未配置 PUSHPLUS_TOKEN，本次仅生成推送存档（push_payload.json），微信推送未执行"
+            python notify_pushplus.py --dry-run
+          else
+            python notify_pushplus.py
           fi
-          python notify_pushplus.py
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## ⚽ 足球日报"
+            echo ""
+            if [ -f football_daily.md ]; then cat football_daily.md; else echo "（未生成日报）"; fi
+            echo ""
+            echo "> 推送存档：\`push_payload.json\`（不含 token）"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-daily-report
+          path: |
+            football_daily.md
+            football_data.json
+            push_payload.json
+          if-no-files-found: warn
 
       - name: Commit report
         run: |

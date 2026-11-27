@@ -10,6 +10,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
@@ -36,10 +37,14 @@ def load_report(md_path: Path, json_path: Path) -> tuple[str, str]:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只生成 payload 存档，不实际推送（无 token 时 CI 使用）")
+    ap.add_argument("--out", default="push_payload.json",
+                    help="dry-run/审计用 payload 文件（不含 token）")
+    args = ap.parse_args()
+
     token = os.environ.get("PUSHPLUS_TOKEN", "").strip()
-    if not token:
-        print("[pushplus] 未配置 PUSHPLUS_TOKEN，跳过推送")
-        return 0
 
     md_path = Path("football_daily.md")
     json_path = Path("football_data.json")
@@ -58,6 +63,19 @@ def main() -> int:
         "content": content,
         "template": "markdown",
     }
+
+    # 审计存档：永远不落盘 token
+    audit = {k: v for k, v in payload.items() if k != "token"}
+    audit["token_present"] = bool(token)
+    Path(args.out).write_text(
+        json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    if not token:
+        print("[pushplus] 未配置 PUSHPLUS_TOKEN：已生成 payload 存档，跳过实际推送")
+        return 0
+    if args.dry_run:
+        print(f"[pushplus] dry-run：payload 已写入 {args.out}，未实际推送")
+        return 0
 
     try:
         resp = requests.post(PUSHPLUS_ENDPOINT, json=payload, timeout=TIMEOUT)
