@@ -11,9 +11,10 @@ on:
         required: false
         type: string
 
-# 需要向仓库写回日报文件
+# 需要向仓库写回日报文件，并创建/评论 issue 触发 GitHub 邮件通知
 permissions:
   contents: write
+  issues: write
 
 # 避免定时任务与手动触发并发写入
 concurrency:
@@ -55,17 +56,23 @@ jobs:
             python fetch_football.py
           fi
 
-      - name: Push to WeChat via PushPlus
-        id: push
-        # secrets 上下文在 if 中不可直接引用，这里通过 env 判断
+      - name: Publish daily report to GitHub Issue (email notification)
+        id: publish
         env:
-          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$PUSHPLUS_TOKEN" ]; then
-            echo "::warning title=PUSHPLUS_TOKEN missing::未配置 PUSHPLUS_TOKEN，本次仅生成推送存档（push_payload.json），微信推送未执行"
-            python notify_pushplus.py --dry-run
+          TITLE="⚽ 足球日报 $(python -c "import json;print(json.load(open('football_data.json'))['date'])")"
+          EXISTING=$(gh issue list --state open --limit 200 --json number,title \
+            --jq ".[] | select(.title == \"$TITLE\") | .number" | head -n 1)
+          if [ -n "$EXISTING" ]; then
+            echo "更新已有 issue #$EXISTING（同日重复触发）"
+            gh issue comment "$EXISTING" --body-file football_daily.md
           else
-            python notify_pushplus.py
+            echo "创建 issue 并指派给 $GITHUB_REPOSITORY_OWNER；GitHub 会按账号通知设置发送邮件到绑定邮箱"
+            gh issue create \
+              --title "$TITLE" \
+              --body-file football_daily.md \
+              --assignee "$GITHUB_REPOSITORY_OWNER"
           fi
 
       - name: Job summary
@@ -86,7 +93,6 @@ jobs:
           path: |
             football_daily.md
             football_data.json
-            push_payload.json
           if-no-files-found: warn
 
       - name: Commit report

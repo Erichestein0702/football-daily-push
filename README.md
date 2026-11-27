@@ -25,7 +25,7 @@
   <a href="https://github.com/Erichestein0702/football-daily-push"><b>快速开始</b></a> ·
   <a href="#-效果预览"><b>效果预览</b></a> ·
   <a href="#-它能做什么"><b>功能特性</b></a> ·
-  <a href="#-五分钟部署到你的微信"><b>部署</b></a> ·
+  <a href="#-部署到你的-github-邮箱"><b>部署</b></a> ·
   <a href="#-实现要点"><b>技术细节</b></a> ·
   <a href="#-常见问题"><b>FAQ</b></a>
 </p>
@@ -37,10 +37,10 @@
 ## 📸 效果预览
 
 <div align="center">
-  <img src="assets/preview.png" alt="微信推送效果预览" width="360">
+  <img src="assets/preview.png" alt="推送效果预览（历史）" width="360">
 </div>
 
-<div align="center"><sub>← 真实的微信推送截图 · 由 <code>fetch_football.py</code> 自动生成</sub></div>
+<div align="center"><sub>← 历史推送效果（现改为 GitHub Issue → 绑定邮箱通知） · 由 <code>fetch_football.py</code> 自动生成</sub></div>
 
 <br>
 
@@ -78,7 +78,7 @@ ESPN Scoreboard API
         ├─▶ 抓取 6 大联赛 × 4 个 UTC 日期桶（并发）
         │      └─ 按北京时间重新归类 · 昨日赛果 + 今日赛程
         │
-        ├─▶ 生成 football_daily.md  ──▶ 推送到微信（PushPlus）
+        ├─▶ 生成 football_daily.md  ──▶ 发布 GitHub Issue（邮件通知到账号绑定邮箱）
         │
         └─▶ 生成 football_data.json ──▶ 提交回仓库归档
 ```
@@ -105,24 +105,22 @@ ESPN Scoreboard API
 | ⭐ | **重点球队** | 曼联、曼城、利物浦、阿森纳、切尔西、热刺、巴萨、皇马、马竞、拜仁、多特、国米、米兰、尤文 **14 支**自动标记 |
 | 🔤 | **中文队名** | 命中重点球队时附带中文简称（如「曼联」「巴萨」） |
 | 📦 | **历史归档** | 每日日报自动提交回仓库，可回溯任意一天 |
-| 🔐 | **密钥安全** | 微信推送 Token 仅存于 GitHub Secrets，从不写入仓库或提交历史 |
+| 🔐 | **零额外密钥** | 使用 GitHub 内置 Issue 通知，邮件发送到账号绑定邮箱；无需 PushPlus/SMTP token |
 
 ---
 
-## 🚀 五分钟部署到你的微信
+## 🚀 部署到你的 GitHub 邮箱
 
 ### 方式一：Fork + 一键启用（推荐）
 
-1. **Fork** 本仓库到你的账号
-2. 打开 [pushplus.plus](https://www.pushplus.plus)，微信扫码登录，复制个人中心的 **Token**
-3. 进入你 Fork 后的仓库 **Settings → Secrets and variables → Actions → New repository secret**
-   - Name：`PUSHPLUS_TOKEN`
-   - Value：粘贴上一步的 Token
-4. 进入 **Actions** 页面，手动触发一次 `⚽ 每日足球推送` 验证
-5. ✅ 从明天起，每天 08:00（北京时间）日报会自动躺在你微信里
+1. **Fork** 本仓库到你的账号（或直接用自己的仓库）
+2. 确认 GitHub 账号邮箱已验证，且通知设置里 **Assignments**（被指派）为邮件通知（默认开启）
+3. 进入 **Actions** 页面，手动触发一次 `⚽ 每日足球推送` 验证
+4. 工作流会创建 `⚽ 足球日报 YYYY-MM-DD` 的 Issue 并指派给你；GitHub 会把通知邮件发到账号绑定邮箱
+5. ✅ 从明天起，每天 08:00（北京时间）日报会自动出现在你的邮箱与 Issues 列表
 
 > 工作流已内置 `cron: "0 0 * * *"`（UTC 00:00 = 北京 08:00），Fork 后**无需改任何代码**。
-> 唯一的额外权限是 `contents: write`，用于把日报归档回仓库。
+> 需要 `contents: write`（归档日报）与 `issues: write`（创建/评论日报 Issue）。
 
 ### 方式二：本地跑一次看看
 
@@ -139,17 +137,10 @@ python fetch_football.py --date 2025-11-01   # 抓取指定日期
 
 | 文件 | 说明 |
 |:--|:--|
-| `football_daily.md` | Markdown 日报（微信推送与提交归档用） |
+| `football_daily.md` | Markdown 日报（邮件通知与提交归档用） |
 | `football_data.json` | 结构化数据，含 UTC/北京双时区时间、状态、比分、是否命中重点球队 |
 
-想同时推送到自己的微信：
-
-```bash
-export PUSHPLUS_TOKEN=你的PushPlus令牌
-python notify_pushplus.py
-```
-
-未设置该环境变量时脚本会打印提示并返回 0，不会中断流程。
+邮件通知由 GitHub Actions 工作流负责；本地运行只生成日报文件。
 
 ---
 
@@ -159,7 +150,7 @@ python notify_pushplus.py
 
 | 名称 | 必填 | 说明 |
 |:--|:--:|:--|
-| `PUSHPLUS_TOKEN` | ❌ | [PushPlus](https://www.pushplus.plus) 令牌。未配置时跳过微信推送，日报仍会正常生成归档 |
+| — | — | 无需额外 Secret；邮件通知使用 GitHub 内置 Issue 通知 |
 
 ### 手动触发与回溯
 
@@ -186,7 +177,7 @@ python fetch_football.py --date 2025-11-01
 | `concurrency` | 避免定时任务与手动触发并发写入冲突 |
 | `cron: "0 0 * * *"` | UTC 00:00 = 北京时间 08:00 |
 
-> 💡 日报正文通过独立的 `notify_pushplus.py` 直接读文件并构造 JSON 请求，
+> 💡 日报正文通过 `gh issue create --body-file football_daily.md` 直接读文件，
 > **不经由 `$GITHUB_OUTPUT` 传递** —— 多行内容写进 `GITHUB_OUTPUT` 会触发
 > `Invalid format` 错误使整个工作流失败。
 
@@ -202,9 +193,8 @@ football-daily-push/
 ├── assets/
 │   ├── banner.png             # README 横幅
 │   ├── logo.svg               # 项目图标
-│   └── preview.png            # 微信推送效果预览
+│   └── preview.png            # 推送效果预览（历史）
 ├── fetch_football.py          # 核心：数据抓取与日报生成
-├── notify_pushplus.py         # 微信（PushPlus）推送
 ├── requirements.txt           # Python 依赖
 ├── LICENSE                    # MIT 许可证
 ├── README.md
@@ -282,11 +272,12 @@ ESPN 队名带变音符与前后缀差异（`Atlético Madrid` vs `Atletico Madr
 </details>
 
 <details>
-<summary><b>Q：微信没收到推送？</b></summary>
+<summary><b>Q：邮箱没收到日报？</b></summary>
 
-1. 确认 `PUSHPLUS_TOKEN` secret 已配置（Settings → Secrets and variables → Actions）
-2. 手动触发工作流，在日志中查看 `Push to WeChat via PushPlus` 步骤输出
-3. 确认 PushPlus 令牌未过期
+1. 确认 GitHub 账号邮箱已验证（Settings → Emails）
+2. 确认通知设置中 Assignments / Issues 为 Email（Settings → Notifications，默认开启）
+3. 手动触发工作流，查看 `Publish daily report to GitHub Issue (email notification)` 步骤
+4. 在 Issues 里确认当天日报 Issue 已创建、assignee 是你；若邮件进了垃圾箱，请标记为非垃圾邮件
 </details>
 
 <details>
