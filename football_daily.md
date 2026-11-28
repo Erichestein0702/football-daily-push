@@ -1,24 +1,47 @@
-# ⚽ 足球日报 · 2026年11月27日
+# ⚽ 足球日报 · 2026年11月28日
 
-> 生成时间：2026-11-27 20:25:38（北京时间） · 数据源：ESPN
+> 生成时间：2026-11-28 13:25:23（北京时间） · 数据源：ESPN
 
 ## 📊 昨日赛果
 
-### 🏆 欧冠
-
-- ⭐ Sabah FK **1 - 4** Barcelona  <sub>· 巴萨</sub>
-- Slavia Prague **0 - 1** Villarreal
-- ⭐ Atlético Madrid **2 - 0** Viking FK  <sub>· 马竞</sub>
-- ⭐ Club Brugge **0 - 3** Liverpool  <sub>· 利物浦</sub>
-- ⭐ Internazionale **2 - 0** VfB Stuttgart  <sub>· 国米</sub>
-- ⭐ Lille **2 - 1** Bayern Munich  <sub>· 拜仁</sub>
-- Paris Saint-Germain **2 - 2** AS Roma
-- Shakhtar Donetsk **0 - 1** Fenerbahce
-- ⭐ Sporting CP **2 - 2** Manchester United  <sub>· 曼联</sub>
+_昨日无已完场赛事_
 
 ## 📅 今日赛程
 
-_今日无赛事安排_
+### 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英超
+
+- ⭐ 11-28 04:00 Nottingham Forest **3 - 2** Chelsea <sub>· 完场</sub>
+- 11-28 23:00 Leeds United vs Coventry City <sub>· 未开始</sub>
+- ⭐ 11-28 23:00 Manchester United vs Brentford <sub>· 未开始</sub>
+
+### 🇪🇸 西甲
+
+- 11-28 04:00 Levante **1 - 3** Racing Santander <sub>· 完场</sub>
+- 11-28 21:00 Real Betis vs Rayo Vallecano <sub>· 未开始</sub>
+- 11-28 23:15 Málaga vs Athletic Club <sub>· 未开始</sub>
+
+### 🇩🇪 德甲
+
+- 11-28 03:30 Werder Bremen **3 - 3** Borussia Mönchengladbach <sub>· 完场</sub>
+- 11-28 22:30 FC Cologne vs SV Elversberg <sub>· 未开始</sub>
+- ⭐ 11-28 22:30 Hamburg SV vs Bayern Munich <sub>· 未开始</sub>
+- 11-28 22:30 Mainz vs 1. FC Union Berlin <sub>· 未开始</sub>
+- 11-28 22:30 SC Paderborn 07 vs Schalke 04 <sub>· 未开始</sub>
+
+### 🇮🇹 意甲
+
+- 11-28 03:45 Venezia **0 - 0** Bologna <sub>· 完场</sub>
+- 11-28 22:00 Frosinone vs Parma <sub>· 未开始</sub>
+
+### 🇫🇷 法甲
+
+- 11-28 03:45 Brest **1 - 0** Paris FC <sub>· 完场</sub>
+
+## ⭐ 重点球队
+
+- 11-28 04:00 Nottingham Forest vs Chelsea <sub>· 切尔西</sub>
+- 11-28 23:00 Manchester United vs Brentford <sub>· 曼联</sub>
+- 11-28 22:30 Hamburg SV vs Bayern Munich <sub>· 拜仁</sub>
 
 ---
 
